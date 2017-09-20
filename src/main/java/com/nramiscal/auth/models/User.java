@@ -22,6 +22,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="users")
 public class User {
+	
 	@Id
 	@GeneratedValue
 	private Long id;

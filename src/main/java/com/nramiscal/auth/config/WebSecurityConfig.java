@@ -31,6 +31,7 @@ public class WebSecurityConfig extends  WebSecurityConfigurerAdapter {
         http.
             authorizeRequests()
                 .antMatchers("/static/**", "/registration").permitAll()
+                .antMatchers("/admin/**").access("hasRole('ADMIN')")		// any URL that starts with "/admin" requires the user to have ROLE_ADMIN
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
